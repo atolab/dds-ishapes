@@ -103,8 +103,9 @@ if(${ADLINK_DDS_PRODUCT} MATCHES "Ospl")
 
 	# Link both executables to idl data type library and opensplice dds libraries (ddskernel & dcpsisocpp2).
 	target_link_libraries(ospl_demo_ishapes PRIVATE ospl_ishape_lib ${PROJECT_LINK_LIBS} Qt5::Widgets Qt5::Core Qt5::Gui)
-
-	set_property(TARGET ospl_demo_ishapes PROPERTY CXX_STANDARD 11)
+	
+	set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
+	set_property(TARGET ospl_demo_ishapes PROPERTY ${CMAKE_CXX_FLAGS})
 
         install(TARGETS ospl_demo_ishapes RUNTIME DESTINATION "$ENV{OSPL_HOME}/bin")
         install(TARGETS ospl_demo_ishapes RUNTIME DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/bin")
@@ -130,7 +131,8 @@ elseif(${ADLINK_DDS_PRODUCT} MATCHES "Cyclone")
 	# Link both executables to idl data type library and ddscxx.
 	target_link_libraries(cyclone_demo_ishapes ddscxxishape_lib CycloneDDS-CXX::ddscxx Qt5::Widgets Qt5::Core Qt5::Gui)
 
-	set_property(TARGET cyclone_demo_ishapes PROPERTY CXX_STANDARD 11)
+	set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
+	set_property(TARGET cyclone_demo_ishapes PROPERTY ${CMAKE_CXX_FLAGS})
 
 	install(TARGETS cyclone_demo_ishapes RUNTIME DESTINATION "${CYCLONE_INSTALLED_DIR}/bin")
 	install(TARGETS cyclone_demo_ishapes RUNTIME DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/bin")
