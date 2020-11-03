@@ -73,7 +73,7 @@ then you need to simply do the following from the iShape demo root directory:
 
 ## Building Opensplice DDS iShapes
 
-### Building on Linux with cmake
+### Building on Linux/MacOS with cmake
 
 To build the iShapes demo you need to have installed a QT5 development environment. The following QT5 environment variables has to be set in order to build and run ishapes:
       
@@ -121,7 +121,7 @@ The iShapes demo allows you to publish and subscribe instances of various shapes
 image-20201022104103958
 
 ## Running Cyclone DDS iShapes
-### Linux:
+### Linux/MacOS:
 
 To build the iShapes demo you need to have set the Cyclone DDS lib to the LD_LIBRARY_PATH. The following Cyclone environment variables has to be set in order to run ishapes:
       
@@ -147,7 +147,7 @@ ospl_demo_ishapes is intalled in <cxxx_install-location>/bin directory of Eclips
 Where <cxx_install-location> is the location of Cyclone DDS C++ package  
 
 ## Running Opensplice DDS iShapes
-### Linux:
+### Linux/MacOS:
 ospl_demo_ishapes is available in <installation>/bin directory of Opensplice DDS installation directory. To run it you should need to simply do the following: 
 
       $ source <ospl_install-location>/release.com
