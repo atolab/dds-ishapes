@@ -27,7 +27,7 @@ For Vortex Opensplice Ishape demo Vortex Opensplice DDS need to be installed bef
 
 To clone the ishape demo application in your locale repository, do  
 
-      $ git clone https://github.com/vivekpandey02/Adlink_DDS_Demo_Ishapes    
+      $ git clone https://github.com/atolab/dds-ishapes   
       $ cd Adlink_DDS_Demo_Ishapes   
 
 
