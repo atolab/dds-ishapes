@@ -103,7 +103,7 @@ To build the demo you need to have installed a QT5 development environment.  The
       
       Where is the installation directory of your QT5 installation , e.g (<C:\Qt\5.7.1> )  
 
-then you should need to simply do the following from the iShape demo root directory:
+then you need to simply do the following from the iShape demo root directory:
 
       $ "<ospl_install-location>"\release.bat  
       $ mkdir ospl_demo_ishapes && cd ospl_demo_ishapes  
