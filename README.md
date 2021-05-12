@@ -132,7 +132,7 @@ To build the iShapes demo you need to have set the Cyclone DDS lib to the LD_LIB
       Where <cxx_install-location> is the location of Cyclone DDS C++ package. 
 
 
-cyclone_demo_ishapes is intalled in the <cxx_install-location>/bin directory of Cyclone installation. To run it  you should need to simply do the following:
+cyclone_demo_ishapes is intalled in the <cxx_install-location>/bin directory of Cyclone installation. To run it  you  need to simply do the following:
 
       $ <cxx_install-location>/bin/cyclone_demo_ishapes &  
       $ <cxx_install-location>/bin/cyclone_demo_ishapes &  
@@ -140,7 +140,7 @@ cyclone_demo_ishapes is intalled in the <cxx_install-location>/bin directory of 
 Where <install-location> is the location of Cyclone DDS C++ package  
 
 ### Windows:
-ospl_demo_ishapes is intalled in <cxxx_install-location>/bin directory of Eclipse Cyclone installation. To run it  you should need to simply do the following:  
+ospl_demo_ishapes is intalled in <cxxx_install-location>/bin directory of Eclipse Cyclone installation. To run it  you need to simply do the following:  
       
       C:\> start <install-location>\bin\cyclone_demo_ishapes  
       C:\> start <install-location>\bin\cyclone_demo_ishapes  
@@ -149,7 +149,7 @@ Where <cxx_install-location> is the location of Cyclone DDS C++ package
 
 ## Running Opensplice DDS iShapes
 ### Linux/MacOS:
-ospl_demo_ishapes is available in <installation>/bin directory of Opensplice DDS installation directory. To run it you should need to simply do the following: 
+ospl_demo_ishapes is available in <installation>/bin directory of Opensplice DDS installation directory. To run it you need to simply do the following: 
 
       $ source <ospl_install-location>/release.com
       $ <ospl_install-location>/bin/ospl_demo_ishapes &
