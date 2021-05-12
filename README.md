@@ -64,12 +64,13 @@ To build the demo you need to have installed a QT5 development environment. The 
 then you need to simply do the following from the iShape demo root directory:
 
       $ mkdir cyclone_demo_ishapes && cd cyclone_demo_ishapes  
-      $ cmake .. -DADLINK_DDS_PRODUCT=Cyclone -DCYCLONE_INSTALLED_DIR="<cxx_install-location>"  
+      $ cmake .. -DADLINK_DDS_PRODUCT=Cyclone -DCYCLONE_INSTALLED_DIR="<cxx_install-location>"  -G "<generator-name>"
       $ cmake --build . --config Release --target install  
       
-      Where <cxx_install-location> is the location of the Cyclone DDS C++ package  
+Where ``<cxx_install-location>`` is the location of the Cyclone DDS C++ package and ``<generator-name>`` by one of the ways CMake [generators](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html)
+offer for generating build files. For  example, "Visual Studio 15 2017 Win64" would target a 64-bit build using Visual Studio 2017.  
       
-      Note: please use '--config Debug' if you are using Cyclone DDS debug build to build this iShape application.
+Note: please use '--config Debug' if you are using Cyclone DDS debug build to build this iShape application.
 
 ## Building Opensplice DDS iShapes
 
@@ -106,12 +107,12 @@ then you should need to simply do the following from the iShape demo root direct
 
       $ "<ospl_install-location>"\release.bat  
       $ mkdir ospl_demo_ishapes && cd ospl_demo_ishapes  
-      $ cmake .. -DADLINK_DDS_PRODUCT=Ospl  
+      $ cmake .. -DADLINK_DDS_PRODUCT=Ospl -G "<generator-name>"
       $ cmake --build . --config Release --target install  
       
-      Where <ospl_install-location> is the location of Opensplice DDS Home directory.  
+ Where ``<ospl_install-location>`` is the location of Opensplice DDS Home directory and ``<generator-name>`` by one of the ways CMake [generators](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html) offer for generating build files. For example, "Visual Studio 15 2017 Win64" would target a 64-bit build  using Visual Studio 2017.
       
-      Note: please use '--config Debug' if you are using Opensplice DDS debug build to build this iShape application.
+Note: please use '--config Debug' if you are using Opensplice DDS debug build to build this iShape application.
       
 
 # Running iShapes
