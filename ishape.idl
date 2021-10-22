@@ -10,8 +10,6 @@
  */
 
 
-module ShapeTypeDemo
-{
 struct ShapeType {
 	string color; //@Key
 	long x;
@@ -19,7 +17,6 @@ struct ShapeType {
 	long shapesize;
 };
 #pragma keylist ShapeType color
-};
 
 
 

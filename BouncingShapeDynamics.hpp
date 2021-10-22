@@ -14,8 +14,10 @@
 
 // -- Shaped Include
 #include <topic-traits.hpp>
-#include <ishape.h>
-using namespace ShapeTypeDemo;
+#ifdef Ospl
+	#include <ishape.h>
+#endif
+
 namespace demo { namespace ishapes {
 class BouncingShapeDynamics : public ShapeDynamics   
 {

@@ -8,7 +8,12 @@
 /** @{*/
 
 #include "config.hpp"
-#include "ishape_DCPS.hpp"
+
+#ifdef Ospl
+	#include "ishape_DCPS.hpp"
+#elif Cyclone
+   	#include "ishape.hpp"
+#endif
 
 
 
