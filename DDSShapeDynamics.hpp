@@ -11,7 +11,6 @@
 // -- Shaped Include
 #include <topic-traits.hpp>
 
-using namespace ShapeTypeDemo;
 
 namespace demo { namespace ishapes {
 #define CN 9

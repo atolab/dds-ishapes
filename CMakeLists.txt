@@ -104,8 +104,9 @@ if(${ADLINK_DDS_PRODUCT} MATCHES "Ospl")
 	# Link both executables to idl data type library and opensplice dds libraries (ddskernel & dcpsisocpp2).
 	target_link_libraries(ospl_demo_ishapes PRIVATE ospl_ishape_lib ${PROJECT_LINK_LIBS} Qt5::Widgets Qt5::Core Qt5::Gui)
 	
-	set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
-	set_property(TARGET ospl_demo_ishapes PROPERTY ${CMAKE_CXX_FLAGS})
+	#set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
+	#set_property(TARGET ospl_demo_ishapes PROPERTY ${CMAKE_CXX_FLAGS})
+	set_property(TARGET ospl_demo_ishapes PROPERTY CXX_STANDARD 11)
 
         install(TARGETS ospl_demo_ishapes RUNTIME DESTINATION "$ENV{OSPL_HOME}/bin")
         install(TARGETS ospl_demo_ishapes RUNTIME DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/bin")
@@ -115,7 +116,7 @@ elseif(${ADLINK_DDS_PRODUCT} MATCHES "Cyclone")
 
 	set(CMAKE_PREFIX_PATH ${CYCLONE_INSTALLED_DIR})
 
-	find_package(Idlpp-cxx REQUIRED PATHS "${CMAKE_PREFIX_PATH}")
+	#find_package(Idlpp-cxx REQUIRED PATHS "${CMAKE_PREFIX_PATH}")
 
 	if (NOT TARGET CycloneDDS-CXX::ddscxx)
 	  find_package(CycloneDDS-CXX REQUIRED PATHS "${CMAKE_PREFIX_PATH}")
@@ -124,15 +125,17 @@ elseif(${ADLINK_DDS_PRODUCT} MATCHES "Cyclone")
 	# Convenience function, provided by the Idlpp-cxx that generates a CMake
 	# target for the given IDL file. The function calls Idlcpp-cxx to generate
 	# source files and compiles them into a library.
-	idl_ddscxx_generate(ddscxxishape_lib "ishape.idl")
+	#idl_ddscxx_generate(ddscxxishape_lib "ishape.idl")
+	idlcxx_generate(TARGET ddscxxishape_lib FILES "ishape.idl")
 
 	add_executable(cyclone_demo_ishapes ${all_SRCS} ishape.qrc)
 
 	# Link both executables to idl data type library and ddscxx.
-	target_link_libraries(cyclone_demo_ishapes ddscxxishape_lib CycloneDDS-CXX::ddscxx Qt5::Widgets Qt5::Core Qt5::Gui)
+	target_link_libraries(cyclone_demo_ishapes CycloneDDS-CXX::ddscxx ddscxxishape_lib Qt5::Widgets Qt5::Core Qt5::Gui)
 
-	set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
-	set_property(TARGET cyclone_demo_ishapes PROPERTY ${CMAKE_CXX_FLAGS})
+	#set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
+	#set_property(TARGET cyclone_demo_ishapes PROPERTY ${CMAKE_CXX_FLAGS})
+	set_property(TARGET cyclone_demo_ishapes PROPERTY CXX_STANDARD 11)
 
 	install(TARGETS cyclone_demo_ishapes RUNTIME DESTINATION "${CYCLONE_INSTALLED_DIR}/bin")
 	install(TARGETS cyclone_demo_ishapes RUNTIME DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/bin")
