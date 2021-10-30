@@ -137,15 +137,25 @@ cyclone_demo_ishapes is intalled in the <cxx_install-location>/bin directory of 
       $ <cxx_install-location>/bin/cyclone_demo_ishapes &  
       $ <cxx_install-location>/bin/cyclone_demo_ishapes &  
   
-Where <install-location> is the location of Cyclone DDS C++ package  
+Where <cxx_install-location> is the location of Cyclone DDS C++ package  
+      
+Note: You can pass DDS domain id and partition(s) as command line arguments to start cyclone_demo_ishapes in a particular DDS domain and start publication and subscription in particular partition(s). for example to start cyclone_demo_ishapes application in domain 1 and publish and subscribe topic(s) in "Partition-1" and "Partition-2"
+      
+      $ <cxx_install-location>/bin/cyclone_demo_ishapes 1 Partition-1 Partition-2 &
+      $ <cxx_install-location>/bin/cyclone_demo_ishapes 1 Partition-1 Partition-2 &
 
 ### Windows:
-ospl_demo_ishapes is intalled in <cxxx_install-location>/bin directory of Eclipse Cyclone installation. To run it  you need to simply do the following:  
+cyclone_demo_ishapes is intalled in <cxx_install-location>/bin directory of Eclipse Cyclone installation. To run it  you need to simply do the following:  
       
-      C:\> start <install-location>\bin\cyclone_demo_ishapes  
-      C:\> start <install-location>\bin\cyclone_demo_ishapes  
+      C:\> start <cxx_install-location>\bin\cyclone_demo_ishapes  
+      C:\> start <cxx_install-location>\bin\cyclone_demo_ishapes  
   
 Where <cxx_install-location> is the location of Cyclone DDS C++ package  
+      
+Note: You can pass DDS domain id and partition(s) as command line arguments to start cyclone_demo_ishapes in a particular DDS domain and start publication and subscription in particular partition(s). for example to start cyclone_demo_ishapes application in domain 1 and publish and subscribe topic(s) in "Partition-1" and "Partition-2"
+      
+      C:\> start <cxx_install-location>\bin\cyclone_demo_ishapes 1 Partition-1 Partition-2
+      C:\> start <cxx_install-location>\bin\cyclone_demo_ishapes 1 Partition-1 Partition-2
 
 ## Running Opensplice DDS iShapes
 ### Linux/MacOS:
@@ -156,6 +166,11 @@ ospl_demo_ishapes is available in <installation>/bin directory of Opensplice DDS
       $ <ospl_install-location>/bin/ospl_demo_ishapes &
   
       Where <ospl_install-location> is the location of Opensplice DDS Home directory.
+      
+      Note: You can pass DDS domain id and partition(s) as command line arguments to start ospl_demo_ishapes in a particular DDS domain and start publication and       subscription in particular partition(s). for example to start ospl_demo_ishapes application in domain 1 and publish and subscribe topic(s) in "Partition-1"       and "Partition-2"
+      
+      $ <ospl_install-location>/bin/ospl_demo_ishapes 1 Partition-1 Partition-2 &
+      $ <ospl_install-location>/bin/ospl_demo_ishapes 1 Partition-1 Partition-2 &
 
 ### Windows:
       $ "<ospl_install-location>"\release.bat 
@@ -163,3 +178,8 @@ ospl_demo_ishapes is available in <installation>/bin directory of Opensplice DDS
       C:\> start <ospl_install-location>\bin\ospl_demo_ishapes  
       
       Where <ospl_install-location> is the location of Opensplice DDS Home directory.
+      
+      Note: You can pass DDS domain id and partition(s) as command line arguments to start ospl_demo_ishapes in a particular DDS domain and start publication and       subscription in particular partition(s). for example to start ospl_demo_ishapes application in domain 1 and publish and subscribe topic(s) in "Partition-1"       and "Partition-2"
+      
+      C:\> start <ospl_install-location>\bin\ospl_demo_ishapes 1 Partition-1 Partition-2
+      C:\> start <ospl_install-location>\bin\ospl_demo_ishapes 1 Partition-1 Partition-2
