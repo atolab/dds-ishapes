@@ -21,7 +21,7 @@ The iShapes demo application code is common for ADLINK Vortex Opensplice and Cyc
 ishapes can be rely on Cyclone DDS only, or Vortex Opensplice dds only, or you can run some ishapes instances with Cyclone and others with Opensplice typically if you want to test interoperability between the too products.
 
 For the Cyclone Ishape demo, the Cyclone DDS C core, CXX Idl compiler and the C++ binding for Cyclone DDS need to be installed before proceeding.   
-You can get Cyclone C Core from https://github.com/eclipse-cyclonedds/cyclonedds.git , the C++ IDL compiler from https://github.com/ADLINK-IST/idlpp-cxx/ and the related C++ APIs from https://github.com/eclipse-cyclonedds/cyclonedds-cxx
+You can get Cyclone C Core from https://github.com/eclipse-cyclonedds/cyclonedds.git and the related C++ APIs from https://github.com/eclipse-cyclonedds/cyclonedds-cxx
 
 For Vortex Opensplice Ishape demo Vortex Opensplice DDS need to be installed before proceeding. you can download the Vortex Opensplice DDS from ADLINK Website : https://www.adlinktech.com/en/vortex-opensplice-data-distribution-service
 
@@ -42,15 +42,26 @@ To build the iShapes demo you need to have installed a QT5 development environme
       
        Where <qt5_install-location> is the installation directory of your QT5 installation , e.g (/usr/lib/x86_64_linux-gnu/qt5)  
 
-then you need to simply do the following from the iShape demo root directory:
+
+ If Cyclone DDS is not installed on the linux default locations ( i.e /usr/lib , /usr/bin ...) you need to update further the LD_LIBRARY_PATH and the PATH env variables. This is described below: 
+
+      1) The LD_LIBRARY_PATH needs to be updated also to point to Cyclone DDS liberaries 
+         export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:<cxx_install-location>/lib
+      2) Update also the PATH env variable to your Cyclone DDS bin directory 
+         export PATH=<cxx_install-location> /bin:$PATH
+                 
+                 Where <cxx_install-location> is the location of Cyclone DDS C++ package (e.g /home/<UserName>/CycloneDDS1.0.0-Linux/) 
+
+To start the real build process go to your iShape-demo root directory and follow those steps:
 
       $ mkdir cyclone_demo_ishapes && cd cyclone_demo_ishapes  
       $ cmake .. -DADLINK_DDS_PRODUCT=Cyclone -DCYCLONE_INSTALLED_DIR="<cxx_install-location>"  
       $ cmake --build . --config Release --target install  
       
-      Where <cxx_install-location> is the location of Cyclone DDS C++ package  
+             <cxx_install-location> is, again, the location of Cyclone DDS C++ package  
       
      Note: please use '--config Debug' if you are using Cyclone DDS debug build to build this iShape application.
+          
 
 ### Building on Windows with cmake
 To build the demo you need to have installed a QT5 development environment. The following QT5 environment variables has to be set in order to build and run ishapes:
@@ -90,6 +101,7 @@ then you need to simply do the following from the iShape demo root directory:
       $ cmake --build . --config Release --target install  
       
       Where <ospl_install-location> is the location of Opensplice DDS Home directory.e. The corresponding Opensplice environment variable is OSPL_HOME. 
+      The <ospl_install-location>/release.com  batch file will update the LD_LIBRARY_PATH and PATH env variables with the appropriate Opensplice libs and commands.
       
       Note: please use '--config Debug' if you are using Opensplice DDS debug build to build this iShape application.
   
@@ -123,15 +135,6 @@ image-20201022104103958
 
 ## Running Cyclone DDS iShapes
 ### Linux/MacOS:
-
-To build the iShapes demo you need to have set the Cyclone DDS lib to the LD_LIBRARY_PATH. The following Cyclone environment variables has to be set in order to run ishapes:
-      
-
-      $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:<cxx_install-location>/lib
-  
-      Where <cxx_install-location> is the location of Cyclone DDS C++ package. 
-
-
 cyclone_demo_ishapes is intalled in the <cxx_install-location>/bin directory of Cyclone installation. To run it  you  need to simply do the following:
 
       $ <cxx_install-location>/bin/cyclone_demo_ishapes &  
