@@ -58,7 +58,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-find_package(Qt5 REQUIRED Core Widgets Gui)
+find_package(Qt6 REQUIRED Core Widgets Gui)
 
 
 set(HEADERS *.h *.hpp)
@@ -102,7 +102,7 @@ if(${ADLINK_DDS_PRODUCT} MATCHES "Ospl")
 	add_executable(ospl_demo_ishapes  ${idl_SRCS} ${all_SRCS} ishape.qrc)
 
 	# Link both executables to idl data type library and opensplice dds libraries (ddskernel & dcpsisocpp2).
-	target_link_libraries(ospl_demo_ishapes PRIVATE ospl_ishape_lib ${PROJECT_LINK_LIBS} Qt5::Widgets Qt5::Core Qt5::Gui)
+	target_link_libraries(ospl_demo_ishapes PRIVATE ospl_ishape_lib ${PROJECT_LINK_LIBS} Qt6::Widgets Qt6::Core Qt6::Gui)
 	
 	#set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
 	#set_property(TARGET ospl_demo_ishapes PROPERTY ${CMAKE_CXX_FLAGS})
@@ -131,7 +131,7 @@ elseif(${ADLINK_DDS_PRODUCT} MATCHES "Cyclone")
 	add_executable(cyclone_demo_ishapes ${all_SRCS} ishape.qrc)
 
 	# Link both executables to idl data type library and ddscxx.
-	target_link_libraries(cyclone_demo_ishapes CycloneDDS-CXX::ddscxx ddscxxishape_lib Qt5::Widgets Qt5::Core Qt5::Gui)
+	target_link_libraries(cyclone_demo_ishapes CycloneDDS-CXX::ddscxx ddscxxishape_lib Qt6::Widgets Qt6::Core Qt6::Gui)
 
 	#set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
 	#set_property(TARGET cyclone_demo_ishapes PROPERTY ${CMAKE_CXX_FLAGS})
